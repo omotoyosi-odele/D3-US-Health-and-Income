@@ -165,6 +165,7 @@ d3.csv("assets/data/data.csv").then(function (scatterData) {
     var toolTip = d3.tip()
         .attr("class", "tooltip")
         .offset([80, -1])
+        .attr("class", "d3-tip")
         .html(function (d) {
             //x key
             var theX;
@@ -188,11 +189,11 @@ d3.csv("assets/data/data.csv").then(function (scatterData) {
                 theX = "<div>" + xLabel + ": " + d[chosenXAxis] + "%<div>";
             } else if (chosenXAxis === "age") {
                 xLabel = "Age";
-                theX = "<div>" + xLabel + ": " + d[chosenXAxis] + "%<div>";
+                theX = "<div>" + xLabel + ": " + d[chosenXAxis] + "<div>";
             }
             else {
                 xLabel = "Income";
-                theX = "<div>" + xLabel + ": " + d[chosenXAxis] + "%<div>";
+                theX = "<div>" + xLabel + ": " + d[chosenXAxis] + "<div>";
             }
             return theState + theX + theY;
         });
